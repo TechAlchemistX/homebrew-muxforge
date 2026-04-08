@@ -10,7 +10,7 @@ class Muxforge < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/TechAlchemistX/muxforge/releases/download/v0.1.0/muxforge-darwin-amd64.tar.gz"
-      sha256 "34fcdb22d2893d066e5898f5b25651954b06ac41f7201ec71886384117e61558"
+      sha256 "97d24fe0784f2e74efe8b7fbf4e87b3bc1aad6d84f0652db5701cfdc1e77b554"
 
       define_method(:install) do
         bin.install "muxforge"
@@ -18,7 +18,7 @@ class Muxforge < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/TechAlchemistX/muxforge/releases/download/v0.1.0/muxforge-darwin-arm64.tar.gz"
-      sha256 "4a188823c0592a3c0b4abeedeb20e4c4a49275339806ea18d7f781b022ca4b41"
+      sha256 "3c469320a5039228b14073a59bf27d9b3b088c00896ffc4435dcd794ae5cadb1"
 
       define_method(:install) do
         bin.install "muxforge"
@@ -29,14 +29,14 @@ class Muxforge < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/TechAlchemistX/muxforge/releases/download/v0.1.0/muxforge-linux-amd64.tar.gz"
-      sha256 "01baf307f66be813a32b48dc67411772f3fabd5d542a63c77d327ecf2832cb43"
+      sha256 "687c625a59088ab3b9aaf99a13808febd657097793e1db661995351a6be9b962"
       define_method(:install) do
         bin.install "muxforge"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/TechAlchemistX/muxforge/releases/download/v0.1.0/muxforge-linux-arm64.tar.gz"
-      sha256 "60e2be0a24fe6093aca8c62a0701ca6fd629d1ffde1c0bdaa29bfb22833c2b2c"
+      sha256 "fc7e38b50b3f7d0703b0af684012e3cabce6b8a5ec73e0175e7fe85d3a9df3d6"
       define_method(:install) do
         bin.install "muxforge"
       end
