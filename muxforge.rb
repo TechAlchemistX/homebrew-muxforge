@@ -5,20 +5,20 @@
 class Muxforge < Formula
   desc "A plugin manager and multiplexer forge for developer toolchains"
   homepage "https://github.com/TechAlchemistX/muxforge"
-  version "0.3.0"
+  version "0.3.1"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/TechAlchemistX/muxforge/releases/download/v0.3.0/muxforge-darwin-amd64.tar.gz"
-      sha256 "68f50603f73a44e71f9dc050ba9e55011d04680e837cad48b087058481f06c72"
+      url "https://github.com/TechAlchemistX/muxforge/releases/download/v0.3.1/muxforge-darwin-amd64.tar.gz"
+      sha256 "e9b86950ec08fd7e657c877496f47247107520021161446128e61029963768d9"
 
       define_method(:install) do
         bin.install "muxforge"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/TechAlchemistX/muxforge/releases/download/v0.3.0/muxforge-darwin-arm64.tar.gz"
-      sha256 "215abb8965fd5cf1a646a6bed96731f960c9f7fb6b0193d52b02d1d0b6238f6f"
+      url "https://github.com/TechAlchemistX/muxforge/releases/download/v0.3.1/muxforge-darwin-arm64.tar.gz"
+      sha256 "992438e735d59abf8afeb2ae58bde7ec075b09842da9cf4f6eb83cd417200f5e"
 
       define_method(:install) do
         bin.install "muxforge"
@@ -28,15 +28,15 @@ class Muxforge < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/TechAlchemistX/muxforge/releases/download/v0.3.0/muxforge-linux-amd64.tar.gz"
-      sha256 "cd130d387a639916950cfb8c9b65839cd51c78b4ad719c24a385875986c0490a"
+      url "https://github.com/TechAlchemistX/muxforge/releases/download/v0.3.1/muxforge-linux-amd64.tar.gz"
+      sha256 "dca5b1e7612a279e1c750636784688748fc8fad16fdce82a2d6b29b6bbf535ef"
       define_method(:install) do
         bin.install "muxforge"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/TechAlchemistX/muxforge/releases/download/v0.3.0/muxforge-linux-arm64.tar.gz"
-      sha256 "2ad88306347659975c12d159fa62effea1958cdfc1d497c8eb47cecb39084876"
+      url "https://github.com/TechAlchemistX/muxforge/releases/download/v0.3.1/muxforge-linux-arm64.tar.gz"
+      sha256 "43d748a61e65a413bc402823d29b59876ee8d5278f55662fa3a8369d16712f72"
       define_method(:install) do
         bin.install "muxforge"
       end
