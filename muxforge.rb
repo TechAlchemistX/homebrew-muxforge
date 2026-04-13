@@ -5,20 +5,20 @@
 class Muxforge < Formula
   desc "A plugin manager and multiplexer forge for developer toolchains"
   homepage "https://github.com/TechAlchemistX/muxforge"
-  version "0.3.0"
+  version "0.4.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/TechAlchemistX/muxforge/releases/download/v0.3.0/muxforge-darwin-amd64.tar.gz"
-      sha256 "0b392c1d73bfe91ede760a9043a5e6ac8a8ee49269da43251bcf6ac81a323b76"
+      url "https://github.com/TechAlchemistX/muxforge/releases/download/v0.4.0/muxforge-darwin-amd64.tar.gz"
+      sha256 "870513dd90c8a42f91d708fe51188afd8850946f0d0b4dbc3bc80ffdf97f1755"
 
       define_method(:install) do
         bin.install "muxforge"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/TechAlchemistX/muxforge/releases/download/v0.3.0/muxforge-darwin-arm64.tar.gz"
-      sha256 "c55b989f2194faf06b1a68697344be90eb8622616133f5d485c4abb61783177e"
+      url "https://github.com/TechAlchemistX/muxforge/releases/download/v0.4.0/muxforge-darwin-arm64.tar.gz"
+      sha256 "dbc6318a5238f593f4da61addb84defe718732d31a6099076a9b8a514035b0f3"
 
       define_method(:install) do
         bin.install "muxforge"
@@ -28,19 +28,29 @@ class Muxforge < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/TechAlchemistX/muxforge/releases/download/v0.3.0/muxforge-linux-amd64.tar.gz"
-      sha256 "6fa2df1bc89d7e33940490ff7c58585d5d7932ada23bedbd68886b1cac33fec1"
+      url "https://github.com/TechAlchemistX/muxforge/releases/download/v0.4.0/muxforge-linux-amd64.tar.gz"
+      sha256 "13b543e1a6be46da7b1bd69ee852ffcfe49fdd9478aaa4cba844d2d39601ee1e"
       define_method(:install) do
         bin.install "muxforge"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/TechAlchemistX/muxforge/releases/download/v0.3.0/muxforge-linux-arm64.tar.gz"
-      sha256 "a43aad5ec6dc7a3f230c06e45684828def276610233198cfe5dbb11b5ed973ba"
+      url "https://github.com/TechAlchemistX/muxforge/releases/download/v0.4.0/muxforge-linux-arm64.tar.gz"
+      sha256 "4286d27b01e2608da313e9df004569681ee24bdc3e902e430e601e71261ebe86"
       define_method(:install) do
         bin.install "muxforge"
       end
     end
+  end
+
+  def caveats
+    <<~EOS
+      To clean up tmux.conf before uninstalling, run:
+        muxforge purge
+
+      To also remove all plugin directories:
+        muxforge purge --purge-plugins
+    EOS
   end
 
   test do
